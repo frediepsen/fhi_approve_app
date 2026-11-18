@@ -1,0 +1,19 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: fhi-approve
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://192.168.25.30:5432/porto_figueira}
+    username: ${DB_USER:sci}
+    password: ${DB_PASSWORD:sci}
+    hikari:
+      maximum-pool-size: 5
+
+app:
+  jwt:
+    # HS256: mínimo de 32 caracteres
+    secret: ${JWT_SECRET:f5b62ea9d3cdc452f89dc9eb66f7860442728f3cc8bf8f6c224d9239070885f7}
+    expiration-hours: ${JWT_EXPIRATION_HOURS:8}
+  cors-origins: ${CORS_ORIGINS:*}

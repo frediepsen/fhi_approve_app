@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:sci-${random.uuid};MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema-test.sql
+      data-locations: classpath:data-test.sql
+
+app:
+  jwt:
+    secret: test-secret-test-secret-test-secret-1234
